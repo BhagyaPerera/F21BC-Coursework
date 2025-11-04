@@ -28,8 +28,10 @@ from .layer import Dense
 from .network import Network
 from .builder import build_network
 from .loss import mean_absolute_error
+from .config import ANNConfig
 
 __all__ = [
+    "ANNConfig",
     "ACTIVATIONS",
     "Dense",
     "Network",

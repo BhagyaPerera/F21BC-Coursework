@@ -38,6 +38,7 @@ class PSO:
 
         self.init_swarm()
 
+    #region Initialization
     # ---------- Initialization (lines 8–9) ----------
     def rand_vec(self, low: float, high: float) -> List[float]:
         return [self.rng.uniform(low, high) for _ in range(self.dimension)]
@@ -66,15 +67,20 @@ class PSO:
             n=self.config.swarm_size, k=self.config.k_informants, rng=self.rng
         )
 
-    # ---------- Utility ----------
+    #endregion
 
+    #region utility
     #is_better compare new fitness value with previous fitness value.
     def is_better(self, a: float, b: float) -> bool:
         return (a < b) if self.config.minimize else (a > b)
+    #endregion
 
-
+    #region PSO run
     # ---------- Main loop ----------
-    def run(self, verbose: bool = True) -> Tuple[List[float], float]:
+    def run(self, verbose: bool = True) -> Tuple[List[float], float, List[float]]:
+
+        best_fitness_history: List[float] = []
+
         # line 11: repeat
         for iteration in range(self.config.iterations):
 
@@ -153,6 +159,10 @@ class PSO:
                 self.P[j] = [self.P[j][i] + self.config.e * self.V[j][i] for i in range(self.dimension)]
                 apply_boundary(self.P[j], self.config.bounds, self.config.boundary_mode)
 
+            # ----- record history here -----
+            if self.gbest_val is not None:
+                best_fitness_history.append(self.gbest_val)
+
             # line 27: termination check (time/ideal). Here: iterations.
             if verbose and (iteration % max(1, self.config.iterations // 10) == 0 or iteration == self.config.iterations - 1):
                 g = self.gbest_val
@@ -160,4 +170,5 @@ class PSO:
 
         # line 28: return Best*
         assert self.gbest_pos is not None and self.gbest_val is not None
-        return self.gbest_pos, self.gbest_val
+        return self.gbest_pos, self.gbest_val,best_fitness_history
+    #endregion

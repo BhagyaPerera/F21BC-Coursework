@@ -21,7 +21,7 @@ class Dense:
         self.input_dimension = input_dimension
         self.output_dimension = output_dimension
         self.activation_function = activation_function
-        self.activation: Callable[[float], float] = ACTIVATIONS[activation_function]
+        self.activation:          Callable[[float], float] = ACTIVATIONS[activation_function]
 
         self.weights:List[List[float]]=[[0.0]*input_dimension for i in range(output_dimension)]
         self.bias:List[float]=[0.0]*output_dimension

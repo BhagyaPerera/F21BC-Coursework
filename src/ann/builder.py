@@ -6,7 +6,7 @@ from .network import Network
 """Helper functions to construct a configurable ANN and
 generate random weight vectors for PSO initialisation."""
 
-#region build_network
+ #region build_network
 def build_network(input_dimension: int,layers_spec: List[Dict[str, Any]],output_dimension: int,output_activation: str = "identity") -> Network:
 
     layers: List[Dense] = []                                                                   #create layers with type Dense List.

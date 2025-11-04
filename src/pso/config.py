@@ -4,6 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional, Tuple
 
+#region PSO_Configuration
 @dataclass
 class PSOConfig:
     # Algorithm 39 coefficients (pseudocode lines 1–6)
@@ -29,3 +30,5 @@ class PSOConfig:
 
     # Boundary handling: 'clip', 'reflect', 'invisible'
     boundary_mode: str = "clip"
+
+#endregion
