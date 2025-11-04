@@ -82,11 +82,11 @@ def train_ann_with_pso(
 
     # 4) PSO config
     cfg = PSOConfig(
-        swarm_size=30,
-        iterations=100,
-        bounds=(-1.0, 1.0),  # every weight/bias must stay in this range
-        minimize=True,
-        k_informants=3,
+        swarm_size=pso_config.swarm_size,
+        iterations=pso_config.iterations,
+        bounds=pso_config.bounds,  # every weight/bias must stay in this range
+        minimize=pso_config.minimize,
+        k_informants=pso_config.k_informants,
     )
 
     # 5) create PSO instance with our objective

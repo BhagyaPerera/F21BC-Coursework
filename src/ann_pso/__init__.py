@@ -8,11 +8,10 @@ PSO has many particles.
      compare with real outputs,
      return the error (MAE)."""
 
-from .ann_pso import build_concrete_network,make_ann_objective,train_ann_with_pso
+from .ann_pso import make_ann_objective,train_ann_with_pso
 
 
 __all__ = [
-    "build_concrete_network",
     "make_ann_objective",
     "train_ann_with_pso",
 ]
