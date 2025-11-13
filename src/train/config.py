@@ -1,5 +1,8 @@
 from pathlib import Path
 
+from src.ann import ANNConfig
+from src.pso import PSOConfig
+
 # where you will drop the CSV
 ROOT_DIR = Path(__file__).resolve().parents[2]  # F21BC-Coursework
 DATASET_PATH = ROOT_DIR / "src" / "data" / "concrete_data.csv"
@@ -10,3 +13,6 @@ RANDOM_SEED: int = 42
 
 # scaling
 USE_MINMAX: bool = True
+
+ANN_CONFIG=ANNConfig()
+PSO_CONFIG=PSOConfig()

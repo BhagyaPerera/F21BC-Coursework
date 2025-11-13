@@ -2,7 +2,7 @@
 name = "concrete-ann-pso"
 version = "0.1.0"
 description = "ANN + PSO project with plotting"
-authors = ["Your Name <you@example.com>"]
+authors = ["Your Name Bhagya, Saji"]
 readme = "README.md"
 
 [tool.poetry.dependencies]

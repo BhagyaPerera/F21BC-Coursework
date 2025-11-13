@@ -19,8 +19,11 @@ class ANNConfig:
     # list of hidden layers, in order
     # each item: {"units": <int>, "activation": <str from your activation.py>}
     hidden_layers: List[Dict[str, str | int]] = field(default_factory=lambda: [
-        {"units": 16, "activation": "relu"},
-        {"units": 8, "activation": "tanh"},
+        {"units": 64, "activation": "relu"}, #Hidden Layer 1
+        {"units": 32, "activation": "relu"},  # Hidden Layer 2
+        {"units": 16, "activation": "relu"},  # Hidden Layer 3
+        {"units": 8, "activation": "relu"},  # Hidden Layer 4
+
     ])
 
     # activation to use in the final/output layer

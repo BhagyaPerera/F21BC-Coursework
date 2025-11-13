@@ -38,7 +38,7 @@ def make_ann_objective(
 
 
     def objective(position: List[float]) -> float:
-        # 1) put particle's numbers into the ANN
+        # 1) put particle's weight and bias into the ANN
         network.set_parameters(position)
 
         # 2) forward-pass all samples with current ANN

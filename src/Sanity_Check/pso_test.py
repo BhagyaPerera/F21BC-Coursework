@@ -46,7 +46,7 @@ def test_pso_1d():
     # PSO expects (dimension, fitness_fn, config)
     pso = PSO(dimension=1, fitness_fn=sphere_1d, config=cfg)
 
-    best_pos, best_val = pso.run(verbose=False)
+    best_pos, best_val,history = pso.run(verbose=False)
 
     print("=== 1D test ===")
     print("best_pos:", best_pos)
@@ -64,7 +64,7 @@ def test_pso_nd(dim: int = 5):
 
     pso = PSO(dimension=dim, fitness_fn=sphere_nd, config=cfg)
 
-    best_pos, best_val = pso.run(verbose=False)
+    best_pos, best_val,history = pso.run(verbose=False)
 
     print(f"=== {dim}D test ===")
     print("best_pos:", best_pos)

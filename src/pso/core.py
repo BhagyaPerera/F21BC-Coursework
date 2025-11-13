@@ -5,7 +5,7 @@ import random
 import math
 
 from .config import PSOConfig
-from .topology import build_informants_random_k, rebuild_if_needed
+from .topology import build_informants_random_k, rebuild_if_needed, build_informants_ring
 from .boundary import apply_boundary, clamp_velocity
 
 
@@ -19,7 +19,7 @@ class PSO:
         self.dimension = dimension                       #dimensions
         self.fitness_fn = fitness_fn                     #fitness function
         self.config = config                                #PSO_configuration
-        self.rng = random.Random(config.seed)
+        self.rng = random.Random()
 
         # line 7: P ← {}
         self.P: List[List[float]] = []                   #position vector
@@ -63,9 +63,41 @@ class PSO:
                           for _ in range(self.config.swarm_size)]
 
         # initial random-k informants (always includes self)
-        self.informants = build_informants_random_k(
-            n=self.config.swarm_size, k=self.config.k_informants, rng=self.rng
-        )
+        top = self.config.topology
+
+        # DEFAULT BEHAVIOUR
+        if top is None or top == "random_k":
+            # Local random-k neighbourhood (default)
+            self.informants = build_informants_random_k(
+                n=self.config.swarm_size,
+                k=self.config.k_informants,
+                rng=self.rng
+            )
+
+        elif top == "ring":
+            # Structured ring neighbourhood
+            self.informants = build_informants_ring(
+                n=self.config.swarm_size,
+                radius=self.config.ring_radius
+            )
+
+        elif top == "gbest":
+            # Fully connected: every particle informs every other
+            self.informants = [
+                list(range(self.config.swarm_size))
+                for _ in range(self.config.swarm_size)
+            ]
+
+        elif top == "fully_random":
+            # Fully random neighbourhood every initial build
+            self.informants = build_informants_random_k(
+                n=self.config.swarm_size,
+                k=self.config.swarm_size,  # all particles
+                rng=self.rng
+            )
+
+        else:
+            raise ValueError(f"Unknown topology type: {top}")
 
     #endregion
 
