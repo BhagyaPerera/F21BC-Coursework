@@ -9,6 +9,7 @@ from typing import Optional, Tuple
 class PSOConfig:
     # Algorithm 39 coefficients (pseudocode lines 1–6)
     topology: str="random_k"
+    ring_radius: float=0.0
     swarm_size: int = 40         #number of particles
     alpha: float = 0.72          #proportion of velocity to be retained
     beta: float = 1.49           #proportion of personal best to be retained
