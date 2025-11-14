@@ -8,7 +8,8 @@ from typing import Optional, Tuple
 @dataclass
 class PSOConfig:
     # Algorithm 39 coefficients (pseudocode lines 1–6)
-    swarm_size: int = 10         #number of particles
+    topology: str="random_k"
+    swarm_size: int = 40         #number of particles
     alpha: float = 0.72          #proportion of velocity to be retained
     beta: float = 1.49           #proportion of personal best to be retained
     gamma: float = 1.49          #proportion of the informants’ best to be retained
@@ -17,7 +18,7 @@ class PSOConfig:
 
     # Practical controls (run settings) (termination, init, etc.)
     iterations: int = 400
-    seed: Optional[int] = 42
+    seed: Optional[int] = None
     minimize: bool = True
 
     # Initialization / search space

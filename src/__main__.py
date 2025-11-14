@@ -8,7 +8,7 @@ def main():
 
      ann_config = ANNConfig()
      pso_config = PSOConfig()
-     run_pipeline(ann_config,pso_config)
+     run_pipeline(ann_config,pso_config,1)
 
 if __name__ == "__main__":
     main()

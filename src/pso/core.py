@@ -63,7 +63,7 @@ class PSO:
                           for _ in range(self.config.swarm_size)]
 
         # initial random-k informants (always includes self)
-        top = self.config.topology
+        top = self.config.topology or "random_k"
 
         # DEFAULT BEHAVIOUR
         if top is None or top == "random_k":
