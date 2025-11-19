@@ -17,7 +17,7 @@ Activate the virtual environment from `requirements.txt`
   
   This initializes configurations and launches training via `run_pipeline()`.
 
-- Experiments conducted are in the notebooks
+- Experiments conducted are in the notebooks for tasks 4 and 5
 
 
 
