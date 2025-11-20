@@ -25,11 +25,8 @@ Activate the virtual environment from `requirements.txt`
 
 - Experiments conducted are in the notebooks for tasks 4 and 5
 
-
-
-
-![img.png](img.png)![img_1.png](img_1.png)
-│
+### Folder Structure
+![img_3.png](img_3.png)
 
 
 
