@@ -13,14 +13,14 @@ IDE -pycharm
 -Activate Virtual Environment - `.venv\Scripts\activate`
 -Install Dependencies- `pip install -r requirements.txt`
 -Missing Dependencies - In any case of missing dependencies use `pip install` to install relavent packages.
--Run the project-python `src/__main__.py`
+-Run the project-python `python -m src`
 
 
 ### How to Run
 - Install dependencies
 Activate the virtual environment from `requirements.txt`
  
-  Entry point: `src/__main__.py`
+  Entry point: `python -m src`
   
   This initializes configurations and launches training via `run_pipeline()`.
 
