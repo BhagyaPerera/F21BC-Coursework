@@ -1,6 +1,5 @@
 """
 Modern ANN + PSO GUI (Light Material Style)
-Author: ChatGPT for Bhagya (2025)
 """
 
 import tkinter as tk
@@ -68,7 +67,7 @@ class PSOANNGui:
                                 scrollregion=sidebar_canvas.bbox("all")
                             ))
 
-        # Frame inside the canvas
+        # Add Frame inside the canvas
         self.left = ttk.Frame(sidebar_canvas)
         sidebar_canvas.create_window((0, 0), window=self.left, anchor="nw")
         # Left side: configuration
