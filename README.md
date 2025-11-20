@@ -12,6 +12,7 @@ IDE -pycharm
 -Create Virtual Environment - `python -m venv .venv`
 -Activate Virtual Environment - `.venv\Scripts\activate`
 -Install Dependencies- `pip install -r requirements.txt`
+-Missing Dependencies - In any case of missing dependencies use `pip install` to install relavent packages.
 -Run the project-python `src/__main__.py`
 
 
