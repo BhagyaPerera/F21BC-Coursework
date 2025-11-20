@@ -11,7 +11,7 @@ The aim of this assessment is to increase the understanding of artificial neural
 IDE -pycharm
 -Create Virtual Environment - `python -m venv .venv`
 -Activate Virtual Environment - `.venv\Scripts\activate`
--Install Dependencies- pip install `-r requirements.txt`
+-Install Dependencies- `pip install -r requirements.txt`
 -Run the project-python `src/__main__.py`
 
 
