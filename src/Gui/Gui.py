@@ -117,7 +117,7 @@ class PSOANNGui:
         ttk.Label(pso_card, text="PSO Configuration",
                   font=("Segoe UI", 16, "bold")).pack()
 
-        self.swarm = tk.IntVar(value=25)
+        self.swarm = tk.IntVar(value=20)
         self.iters = tk.IntVar(value=50)
         self.runs = tk.IntVar(value=5)
 
