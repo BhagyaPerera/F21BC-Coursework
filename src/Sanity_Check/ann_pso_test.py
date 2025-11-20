@@ -11,7 +11,8 @@ Run from project root:
     python -m src.Test.ann_pso_test
 """
 
-from src.ann_pso import build_concrete_network,make_ann_objective,train_ann_with_pso
+from src.ann_pso import make_ann_objective,train_ann_with_pso
+from src.ann.builder import build_network
 
 
 def main():

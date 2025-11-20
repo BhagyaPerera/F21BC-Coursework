@@ -66,6 +66,8 @@ def train_ann_with_pso(
     y_train: Sequence[float],
     pso_config: PSOConfig = PSOConfig(),
     ann_config: ANNConfig = ANNConfig(),
+    callback= None,
+    run_index=0
 
 
 ) -> Tuple[Network, float,List[float]]:
@@ -97,7 +99,13 @@ def train_ann_with_pso(
     )
 
     # 6) run optimisation
-    best_position, best_fitness,history = pso.run(verbose=True)
+    best_position, best_fitness, history = pso.run(
+        verbose=True,
+        callback=lambda iteration, best, ri=run_index: (
+            callback(iteration, best, ri) if callback else None
+        ),
+        run_index=run_index
+    )
 
     # 7) load the best weights into the ANN so caller can use it
     net.set_parameters(best_position)

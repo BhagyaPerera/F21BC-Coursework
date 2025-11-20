@@ -1,14 +1,19 @@
-# src/__main__.py
-from src.ann import ANNConfig
-from src.pso import PSOConfig
-from src.train.pipeline import run_pipeline
+# main.py or src/__main__.py
+
+import tkinter as tk
+from src.Gui.Gui import PSOANNGui
+
 
 def main():
+    # Create Tk window
+    root = tk.Tk()
 
+    # Launch our GUI class with the root window
+    app = PSOANNGui(root)
 
-     ann_config = ANNConfig()
-     pso_config = PSOConfig()
-     run_pipeline(ann_config,pso_config,1)
+    # Enter Tk main loop
+    root.mainloop()
+
 
 if __name__ == "__main__":
     main()

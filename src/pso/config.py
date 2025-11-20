@@ -10,7 +10,7 @@ class PSOConfig:
     # Algorithm 39 coefficients (pseudocode lines 1–6)
     topology: str="random_k"
     ring_radius: float=0.0
-    swarm_size: int = 40         #number of particles
+    swarm_size: int = 25         #number of particles
     alpha: float = 0.72          #proportion of velocity to be retained
     beta: float = 1.49           #proportion of personal best to be retained
     gamma: float = 1.49          #proportion of the informants’ best to be retained
@@ -18,7 +18,7 @@ class PSOConfig:
     e: float = 1.0               #jump_size of a particle
 
     # Practical controls (run settings) (termination, init, etc.)
-    iterations: int = 400
+    iterations: int = 50
     seed: Optional[int] = None
     minimize: bool = True
 

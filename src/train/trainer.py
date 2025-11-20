@@ -17,8 +17,10 @@ def train_with_pso(
     y_train: Sequence[float],
     ann_config: ANNConfig,
     pso_config: PSOConfig,
+    callback=None,
+    run_index=0
 ) -> Tuple[Network, float, List[float]]:
-    net, best_fit, history = train_ann_with_pso(x_train, y_train,pso_config,ann_config)
+    net, best_fit, history = train_ann_with_pso(x_train, y_train,pso_config,ann_config,callback=callback, run_index=0)
     return net, best_fit, history
 
 #endregion

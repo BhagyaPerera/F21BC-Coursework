@@ -22,7 +22,7 @@ class ANNConfig:
         #{"units": 64, "activation": "relu"}, #Hidden Layer 1
         #{"units": 32, "activation": "relu"},  # Hidden Layer 2
         #{"units": 16, "activation": "relu"},  # Hidden Layer 3
-        {"units": 64, "activation": "relu"},  # Hidden Layer 4
+        {"units": 8, "activation": "relu"},  # Hidden Layer 4
 
     ])
 

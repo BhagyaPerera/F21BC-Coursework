@@ -109,7 +109,7 @@ class PSO:
 
     #region PSO run
     # ---------- Main loop ----------
-    def run(self, verbose: bool = True) -> Tuple[List[float], float, List[float]]:
+    def run(self, verbose: bool = True,callback: Callable[[int, float], None] | None = None,run_index: int = 0) -> Tuple[List[float], float, List[float]]:
 
         best_fitness_history: List[float] = []
 
@@ -194,6 +194,10 @@ class PSO:
             # ----- record history here -----
             if self.gbest_val is not None:
                 best_fitness_history.append(self.gbest_val)
+
+            # ===send update to GUI ===
+            if callback:
+                callback(iteration, self.gbest_val, run_index)
 
             # line 27: termination check (time/ideal). Here: iterations.
             if verbose and (iteration % max(1, self.config.iterations // 10) == 0 or iteration == self.config.iterations - 1):
